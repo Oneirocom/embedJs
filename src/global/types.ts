@@ -36,7 +36,13 @@ export type ExtractChunkData<
     metadata: Metadata<Meta>;
 };
 
-export type AddLoaderReturn = { entriesAdded: number; uniqueId: string; loaderType: string };
+export type AddLoaderReturn = {
+    entriesAdded: number;
+    uniqueId: string;
+    loaderType: string;
+    raw?: Chunk[];
+    meta?: Record<string, unknown>;
+};
 
 export type ConversationHistory = {
     message: string;
