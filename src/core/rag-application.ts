@@ -150,7 +150,13 @@ export class RAGApplication {
         this.loaders.push(loader);
 
         this.debug(`Add loader ${uniqueId} wrap`);
-        return { entriesAdded: newInserts, uniqueId, loaderType: loader.constructor.name };
+        return {
+            entriesAdded: newInserts,
+            uniqueId,
+            loaderType: loader.constructor.name,
+            raw: formattedChunks,
+            meta: {},
+        };
     }
 
     /**
